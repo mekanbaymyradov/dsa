@@ -42,7 +42,8 @@ class DequeBasedStack:
     
     def is_empty(self):
         return len(self.stack) == 0
-    
+
+# Test cases
 stack = ListBasedStack()
 stack.push(10)
 stack.push(20)
