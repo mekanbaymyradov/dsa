@@ -10,7 +10,7 @@ My notes on concepts covering algorithms and data structures, as well as solved 
 ---
 
 ## Introduction to Data Structures
-**Basics** • **Stacks** • **Queues** • **Linked List** • **Hash Tables** • **Heaps**
+[**Basics**][#basics] • [**Stacks**][#stacks] • [**Linked List**][#linked-lis]
 
 ### Basics
 A data structure is a way to store data.
