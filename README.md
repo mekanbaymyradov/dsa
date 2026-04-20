@@ -1,4 +1,4 @@
-# Algorithms and Data Structures: A Comprehensive Guide
+# Algorithms and Data Structures: A Learning Journey
 
 My notes on concepts covering algorithms and data structures, as well as solved Leetcode problems.
 
@@ -10,7 +10,7 @@ My notes on concepts covering algorithms and data structures, as well as solved 
 ---
 
 ## Introduction to Data Structures
-[**Basics**][#basics] • [**Stacks**][#stacks] • [**Linked List**][#linked-lis]
+[**Basics**](#basics) • [**Stacks**](#stacks) • [**Linked List**](#linked-list)
 
 ### Basics
 A data structure is a way to store data.
