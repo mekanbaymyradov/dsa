@@ -38,7 +38,7 @@ A data structure is a way to store data.
 | **Memory** | Inefficient utilization | Relatively efficient utilization |
 | **Complexity** | Time complexity increases with data | Time complexity remains the same/stable |
 
-![](https://github.com/mekanbaymyradov/dsa/Resources/images/DST-neetcode.jpg)
+![](https://github.com/mekanbaymyradov/dsa/blob/main/Resources/images/DST-neetcode.jpg)
 ---
 
 ### Stacks
