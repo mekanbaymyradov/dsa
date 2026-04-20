@@ -38,6 +38,7 @@ A data structure is a way to store data.
 | **Memory** | Inefficient utilization | Relatively efficient utilization |
 | **Complexity** | Time complexity increases with data | Time complexity remains the same/stable |
 
+![](https://github.com/mekanbaymyradov/dsa/Resources/images/DST-neetcode.jpg)
 ---
 
 ### Stacks
@@ -49,7 +50,6 @@ A linear data structure that follows the principle of **LIFO (Last In First Out)
 * **IsEmpty**: Check if the stack is empty.
 * **PEEK**: Check the value of the top element without removing it.
 
-> **Applications:** Undo / Redo in text editors, Backtracking problems (mazes), String reversals, Compilers, Browsers (saving previously visited URLs).
 
 #### Implementation in Python
 There are two primary ways to implement stacks in Python:
