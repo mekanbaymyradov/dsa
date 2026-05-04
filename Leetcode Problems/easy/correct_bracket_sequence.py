@@ -21,5 +21,5 @@ def main(line):
         print('no')
 
 if __name__ == '__main__':
-    n = input().strip
+    n = input().strip()
     main(n)
