@@ -1,4 +1,5 @@
 # Python implementations of stacks - List-based implementation and Deque-based implementation 
+from collections import deque
 
 class ListBasedStack:
     def __init__(self):
@@ -21,7 +22,6 @@ class ListBasedStack:
         return len(self.stack) == 0
 
 
-from collections import deque
 
 class DequeBasedStack:
     def __init__(self):
