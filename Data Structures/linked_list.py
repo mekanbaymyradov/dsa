@@ -1,5 +1,8 @@
 
 
+import re
+
+
 class Node:
     def __init__(self, data, next=None):
         self.data = data
@@ -87,10 +90,7 @@ class LinkedList:
             
         raise IndexError("Index out of range")
 
-    def insert_after_value(self, data_after, data_to_insert):
-        if self.head is None:
-            raise ValueError("Linked list is empty")
-            
+    def insert_after_value(self, data_after, data_to_insert):            
         curr = self.head
 
         while curr:
@@ -101,7 +101,24 @@ class LinkedList:
             curr = curr.next
 
         raise ValueError("Given data not found")
-        
+
+    def remove_by_value(self, data):
+        if self.head is None:
+            raise ValueError("Given data not found")
+            
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+
+        curr = self.head
+        while curr.next:
+            if curr.next.data == data:
+                curr.next = curr.next.next
+                return
+                
+            curr = curr.next
+            
+        raise ValueError("Given data not found")
         
 
 if __name__ == "__main__":
@@ -109,10 +126,11 @@ if __name__ == "__main__":
     ll.insert_at_beginning("apple")
     ll.insert_at_beginning("orange")
     ll.insert_at_end("banana")
-    ll.print()
-    print("length:", ll.get_length())
     ll.remove_at(1)
     ll.insert_at(1, "grapes")
     ll.insert_after_value("orange","mango")
     ll.insert_after_value("mango","apple")
+    print("length:", ll.get_length())
+    ll.print()
+    ll.remove_by_value("mango")
     ll.print()
