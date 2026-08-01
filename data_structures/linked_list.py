@@ -1,11 +1,7 @@
 
-
-import re
-
-
 class Node:
-    def __init__(self, data, next=None):
-        self.data = data
+    def __init__(self, val=0, next=None):
+        self.val = val
         self.next = next
 
 
@@ -13,8 +9,8 @@ class LinkedList:
     def __init__(self):
         self.head = None
 
-    def insert_at_beginning(self, data):
-        node = Node(data, self.head)
+    def insert_at_beginning(self, val):
+        node = Node(val, self.head)
         self.head = node
 
     def print(self):
@@ -25,21 +21,21 @@ class LinkedList:
         ll_str = ""
         curr = self.head
         while curr:
-            ll_str += str(curr.data) + "->"
+            ll_str += str(curr.val) + "->"
             curr = curr.next
 
         print(ll_str)
 
-    def insert_at_end(self, data):
+    def insert_at_end(self, val):
         if self.head is None:
-            self.head = Node(data, None)
+            self.head = Node(val, None)
             return
 
         curr = self.head
         while curr.next:
             curr = curr.next
 
-        curr.next = Node(data, None)
+        curr.next = Node(val, None)
 
     def get_length(self):
         count = 0
@@ -69,19 +65,19 @@ class LinkedList:
 
         curr.next = curr.next.next
 
-    def insert_at(self, index, data):
+    def insert_at(self, index, val):
         if index < 0:
             raise IndexError("Index out of range")
 
         if index == 0:
-            self.insert_at_beginning(data)
+            self.insert_at_beginning(val)
             return
         
         count = 0    
         curr = self.head
         while curr:
             if count == index - 1:
-                node = Node(data, curr.next)
+                node = Node(val, curr.next)
                 curr.next = node
                 return
                 
@@ -90,35 +86,59 @@ class LinkedList:
             
         raise IndexError("Index out of range")
 
-    def insert_after_value(self, data_after, data_to_insert):            
+    def insert_after_value(self, val_after, val_to_insert):            
         curr = self.head
 
         while curr:
-            if curr.data == data_after:
-                node = Node(data_to_insert, curr.next)
+            if curr.val == val_after:
+                node = Node(val_to_insert, curr.next)
                 curr.next = node
                 return
             curr = curr.next
 
-        raise ValueError("Given data not found")
+        raise ValueError("Given val not found")
 
-    def remove_by_value(self, data):
+    def remove_by_value(self, val):
         if self.head is None:
-            raise ValueError("Given data not found")
+            raise ValueError("Given val not found")
             
-        if self.head.data == data:
+        if self.head.val == val:
             self.head = self.head.next
             return
 
         curr = self.head
         while curr.next:
-            if curr.next.data == data:
+            if curr.next.val == val:
                 curr.next = curr.next.next
                 return
                 
             curr = curr.next
             
-        raise ValueError("Given data not found")
+        raise ValueError("Given val not found")
+
+    def insert_nodes(self, values):
+        if not values:
+            self.head = None
+            return
+            
+        self.head = Node(values[0], None)
+        curr = self.head
+
+        for val in values[1:]:
+            curr.next = Node(val, None)
+            curr = curr.next
+
+    @classmethod
+    def from_head(cls, head):
+        ll = cls()
+        ll.head = head
+        return ll
+
+    @classmethod
+    def from_list(cls, values):
+        ll = cls()
+        ll.insert_nodes(values)
+        return ll
         
 
 if __name__ == "__main__":
